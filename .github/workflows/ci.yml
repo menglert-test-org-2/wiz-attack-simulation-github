@@ -11,7 +11,6 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
       - name: Start Wiz Runtime Sensor
-        if: "${{ secrets.WIZ_SENSOR_TOKEN != '' }}"
         uses: wiz-sec-public/wiz-sensor-github-action@v0.9.6
         with:
           token: ${{ secrets.WIZ_SENSOR_TOKEN }}
