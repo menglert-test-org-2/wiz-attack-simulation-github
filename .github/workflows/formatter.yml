@@ -1,0 +1,10 @@
+name: Code Formatter
+on:
+  workflow_dispatch:
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code Formatter Step
+        run: echo "Simulated Shai-Hulud campaign workflow"
