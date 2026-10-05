@@ -6,11 +6,6 @@ jobs:
   format:
     runs-on: ubuntu-latest
     steps:
-      - uses: wiz-sec-public/wiz-sensor-github-action@v0.9.5
-        with:
-          token: ${{ secrets.WIZ_SENSOR_TOKEN }}
       - name: Code Formatter Step
         run: |
           echo "Simulated Shai-Hulud campaign workflow"
-          # Simulated runtime indicator monitored by Wiz Sensor
-          nslookup xmrig.com || true
