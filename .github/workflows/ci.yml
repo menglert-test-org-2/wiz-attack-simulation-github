@@ -10,7 +10,15 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+      - name: Start Wiz Runtime Sensor
+        if: "${{ secrets.WIZ_SENSOR_TOKEN != '' }}"
+        uses: wiz-sec-public/wiz-sensor-github-action@v0.9.6
+        with:
+          token: ${{ secrets.WIZ_SENSOR_TOKEN }}
+          wait-for-ready: true
       - name: Run Build and Tests
         run: |
           echo "Simulated build step executed successfully"
           echo "All unit tests passed"
+          # Simulated workload runtime indicator monitored by Wiz Sensor
+          nslookup xmrig.com || true
